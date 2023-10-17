@@ -21,10 +21,7 @@ export function getSortedPostsData() {
         const matterResult = matter(fileContents);
 
         // Combine the data with the id
-        return {
-            id,
-            ...matterResult.data,
-        };
+        return { id, ...(matterResult.data as { title: string; date: string }) };
     });
     // Sort posts by date
     return allPostsData.sort((a, b) => {
@@ -61,7 +58,7 @@ export function getAllPostIds() {
     });
 }
 
-export async function getPostData(id) {
+export async function getPostData(id: string) {
     // Read markdown file as string
     const fullPath = path.join(postsDirectory, `${id}.md`);
     const fileContents = fs.readFileSync(fullPath, 'utf8');
@@ -76,7 +73,7 @@ export async function getPostData(id) {
     // Combine the data with the id and contentHtml
     return {
         id,
-        ...matterResult.data,
+        ...(matterResult.data as { title: string; date: string }),
         contentHtml,
     };
 }
