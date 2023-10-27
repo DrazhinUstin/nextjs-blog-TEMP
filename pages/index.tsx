@@ -30,7 +30,7 @@ export default function Home({
                 <title>{siteTitle}</title>
             </Head>
             <section className={utilStyles.headingMd}>
-                <p>Hello, I am Ustin. I am studying programming. Go and fuck yourself.</p>
+                <p>Hello, I am Ustin. I am studying programming. Check out my first Next.js app.</p>
                 <p>
                     (This is a sample website - you’ll be building a site like this on{' '}
                     <a href='https://nextjs.org/learn'>our Next.js tutorial</a>.)
